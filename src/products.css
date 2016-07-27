@@ -1,0 +1,11 @@
+#cat {
+  display: block;
+}
+
+li {
+  display: inline;
+}
+
+.row {
+  margin-bottom: 20px;
+}
