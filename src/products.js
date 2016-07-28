@@ -62,12 +62,6 @@ $('#cat_2').on('click', function(e) {
   console.log('cat_2');
 });
 
-<<<<<<< HEAD
-$('#cat_3').on('click', function(e) {
-  e.preventDefault();
-  console.log('cat_3');
-});
-=======
 // Show All
 $('#show_all').on('click', function(e) {
   e.preventDefault();
@@ -78,11 +72,6 @@ $('#show_all').on('click', function(e) {
   console.log('cat_1');
 });
 
-// $('#cat_3').on('click', function(e) {
-//   e.preventDefault();
-//   console.log('cat_3');
-// });
->>>>>>> 4a2f45e80f4e6485a3f74692090f7b005b1d4458
 //
 // $('#cat_4').on('click', function(e) {
 //   e.preventDefault();
