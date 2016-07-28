@@ -30,7 +30,7 @@ a {
 .product {
   max-width: 75%;
 }
-.jumbotron {
+#jtron {
   width: 100%;
   background: url(img/tasky_pattern.png);
   color: white;
