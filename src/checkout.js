@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  validateTextField('#lastNameShipping');
-  validateTextField('#lastNameBilling');
-  validateTextField('#address1Shipping');
-  validateTextField('#address1Billing');
-  validateZipField('#zipCodeShipping');
-  validateZipField('#zipCodeBilling');
+  validateInput('#lastNameShipping', 1);
+  validateInput('#lastNameBilling', 1);
+  validateInput('#address1Shipping', 1);
+  validateInput('#address1Billing', 1);
+  validateInput('#zipCodeShipping', 5);
+  validateInput('#zipCodeBilling', 5);
   $('#copyToBilling').click(function() {
     $("#firstNameBilling").val($("#firstNameShipping").val());
     $("#lastNameBilling").val($("#lastNameShipping").val());
@@ -30,22 +30,21 @@ $(document).ready(function() {
       console.log(ccNum);
       console.log('The credit card number appears to be invalid.');
       var errorMessage = 'Uh oh. Your credit card number appears to be invalid. Please enter a valid number and resubmit.'
-      console.log('The CVC number appears to be invalid.');
-      alertErrorMessage(errorMessage);
+      alertMessage(errorMessage, 'danger');
     }
     // Validate the CVC
     if (!Stripe.card.validateCVC(cvcNum)) {
       error = true;
       var errorMessage = 'The CVC number appears to be invalid. Please enter a valid number and resubmit.'
       console.log('The CVC number appears to be invalid.');
-      alertErrorMessage(errorMessage);
+      alertMessage(errorMessage, 'danger');
     }
     // Validate the expiration
     if (!Stripe.card.validateExpiry(expMonth, expYear)) {
       error = true;
       var errorMessage = 'The expiration date appears to be invalid. Please enter a valid month and year and resubmit.';
       console.log('The expiration date appears to be invalid.');
-      alertErrorMessage(errorMessage);
+      alertMessage(errorMessage, 'danger');
     }
     // Get the Stripe token
     if (!error) {
@@ -62,29 +61,18 @@ $(document).ready(function() {
       } else { // No errors, submit the form.
         console.log('form submitted successfully!');
         var successMessage = 'Your purchase has been successfully processed!';
-        //$("#personalInfo")[0].reset();
-        alertSuccessMessage(successMessage);
+        $("#personalInfo")[0].reset();
+        alertMessage(successMessage, 'success');
       }
     }
   });
 });
 //Validation Functions
-//Function to validate text field
-function validateTextField(id) {
+//Function to validate fields
+function validateInput(id, num) {
   $(id).on('input', function() {
     var inputValue = $(this).val();
-    if (inputValue.length <= 1) {
-      $(this).css({'border-color': 'red', 'box-shadow': '0 0 10px red'});
-    } else {
-      $(this).css({'border-color': '', 'box-shadow': ''});
-    }
-  });
-}
-//Function to validate zip code field
-function validateZipField(id) {
-  $(id).on('input', function() {
-    var zipValue = $(this).val().replace(/-/g, '');
-    if (zipValue.length < 5) {
+    if (inputValue.length <= num) {
       $(this).css({'border-color': 'red', 'box-shadow': '0 0 10px red'});
     } else {
       $(this).css({'border-color': '', 'box-shadow': ''});
@@ -92,9 +80,6 @@ function validateZipField(id) {
   });
 }
 //Apply error message
-function alertErrorMessage(msg) {
-  $("#submitMessage").append('<div class="alert alert-dismissible alert-danger"><strong>' + msg + '</stron></div>').delay(3000).fadeOut(500).removeClass('');
-}
-function alertSuccessMessage(msg) {
-  $("#submitMessage").append('<div class="alert alert-dismissible alert-success"><strong>' + msg + '</stron></div>').delay(3000).fadeOut(500).removeClass('');
+function alertMessage(msg, bSClass) {
+  $("#submitMessage").append('<div class="alert alert-dismissible alert-' + bSClass + '"><strong>' + msg + '</strong></div>').delay(3000).fadeOut(500).removeClass('');
 }
