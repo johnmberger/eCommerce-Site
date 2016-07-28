@@ -18,7 +18,9 @@
 .footerTitle {
   color: gainsboro;
 }
-
+.navbar-brand {
+  cursor: default;
+}
 /*Unique*/
 a {
   color: brown;
