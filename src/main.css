@@ -1,0 +1,98 @@
+/*Header & Footer*/
+.navbar {
+  margin-bottom: 0;
+}
+.copyright {
+  margin-top: 0;
+  background-color: black;
+  color: darkgrey;
+}
+.footer {
+  margin: 15px auto 0;
+  background-color: grey;
+  width: 100%;
+}
+.map {
+  padding-bottom: 8%;
+}
+.footerTitle {
+  color: gainsboro;
+}
+
+/*Unique*/
+a {
+  color: brown;
+}
+.emailSignup {
+  background-image: url(img/swirl_pattern.png);
+  padding: 3%;
+}
+.product {
+  max-width: 75%;
+}
+.jumbotron {
+  width: 100%;
+  background: url(img/tasky_pattern.png);
+  color: white;
+}
+.blogPosts {
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
+.product {
+  cursor: pointer;
+}
+.add-to-cart {
+  opacity: 0.85;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+}
+.add-to-cart:hover {
+  background-color: orangered;
+}
+.footerPic {
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+/*Carousel*/
+.carousel {
+  position: relative;
+  padding-top: 0;
+}
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carousel-image {
+  display: none;
+}
+#pointer-left {
+  font-size: 5rem;
+  z-index: 1;
+  position: absolute;
+  left: 10px;
+  color: lightgrey;
+  opacity: 0.75;
+  cursor: pointer
+}
+#pointer-right{
+  font-size: 5rem;
+  z-index: 1;
+  position: absolute;
+  color: lightgrey;
+  opacity: 0.75;
+  right: 10px;
+  cursor: pointer
+}
+.pointer:hover {
+  color: white;
+}
