@@ -66,14 +66,16 @@ $(document).on('ready', function() {
     }, 6000);
   });
 
-
   $('#emailInput').on('input', function() {
+
     var emailAddress = $(this).val();
     var IndexOfatSign = emailAddress.indexOf('@')
     var IndexOfPeriod = emailAddress.indexOf('.')
+    var length = emailAddress.length;
+
     $(this).css({'border-color': 'red', 'box-shadow': '0 0 10px red'});
     $(this).removeClass('validEmail');
-    if (emailAddress.length > 3 && emailAddress.includes('@') && emailAddress.includes('.') && IndexOfPeriod - IndexOfatSign > 1 && emailAddress.length - IndexOfPeriod > 2) {
+    if (length > 3 && emailAddress.includes('@') && emailAddress.includes('.') && IndexOfPeriod - IndexOfatSign > 1 && length - IndexOfPeriod > 2 && IndexOfPeriod !== length && !emailAddress.includes(')') && !emailAddress.includes('(') && emailAddress.charAt(length - 1) !== '.' && emailAddress.charAt(length - 1) !== '@' && emailAddress.charAt(length - 1) !== ' ' && emailAddress.charAt(0) !== '@') {
       $(this).css({'border-color': '#428bca', 'box-shadow': '0 0 10px #428bca'}).addClass('validEmail');
     }
   })
@@ -109,7 +111,6 @@ $(document).on('ready', function() {
       $('.add-to-cart').remove();
     })
   })
-
 });
 
 function resizeHelper() {

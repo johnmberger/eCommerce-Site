@@ -24,7 +24,7 @@ a {
   color: brown;
 }
 .emailSignup {
-  background-image: url(swirl_pattern.png);
+  background-image: url(img/swirl_pattern.png);
   padding: 3%;
 }
 .product {
@@ -32,7 +32,7 @@ a {
 }
 .jumbotron {
   width: 100%;
-  background: url(tasky_pattern.png);
+  background: url(img/tasky_pattern.png);
   color: white;
 }
 .blogPosts {
@@ -53,6 +53,13 @@ a {
 }
 .add-to-cart:hover {
   background-color: orangered;
+}
+.footerPic {
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 
 /*Carousel*/
