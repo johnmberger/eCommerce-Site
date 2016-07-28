@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yo! Yo's</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- custom css -->
+    <link rel="stylesheet" href="src/main.css">
+  </head>
+
+  <body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            Yo! Yo's
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="src/products.html">Yo-Yos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="src/products.html">Scooters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="src/products.html">Sale</a>
+          </li>
+        </ul>
+        <div class="nav navbar-nav navbar-right cart">
+          <ul class="nav navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="src/checkoutpage.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 3 Items - $42.50</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- carousel overlays -->
+    <div id="pointer-left">
+      <i class="overlay pointer glyphicon glyphicon-chevron-left"></i>
+    </div>
+    <div id="pointer-right">
+      <i class="overlay pointer glyphicon glyphicon-chevron-right"></i>
+    </div>
+    <!-- carousel -->
+    <div class="sliderImage carousel">
+      <img id="carousel1" class="img-responsive carousel-image" src="src/img/yo.png" alt="shoes" />
+      <img id="carousel2" class="img-responsive carousel-image" src="src/img/kidsyoyo.png" alt="kids" />
+      <img id="carousel3" class="img-responsive carousel-image" src="src/img/paperfinal.png" alt="paper" />
+    </div>
+
+    <div class="jumbotron featured-products">
+      <h1 class="text-center">Featured Products</h1>
+    </div>
+    <div class="container product-div">
+      <div class="col-sm-4">
+        <div class="image-div">
+          <img class="img-responsive product" src="src/img/yoyo1.jpg" alt="Yo-Yo1" />
+        </div>
+        <h3>Rhythm Yo-Yo</h3>
+        <h4><small>$ 7,899.99</small></h4>
+        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span>
+      </div>
+      <div class="col-sm-4 product-div">
+        <div class="image-div">
+          <img class="img-responsive product" src="src/img/yoyo3.jpg" alt="Yo-Yo3" />
+        </div>
+        <h3>Tipi Yo-Yo</h3>
+        <h4><small>$ 12,899.99</small></h4>
+        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span>
+      </div>
+      <div class="col-sm-4 product-div">
+        <div class="image-div">
+          <img class="img-responsive product" src="src/img/scooter.jpg" alt="scooter" />
+        </div>
+        <h3>This Awesome Scooter Thing</h3>
+        <h4><small>$ 23,499.99</small></h4>
+        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+      </div>
+    </div>
+
+    <!-- email sign up -->
+    <hr>
+    <div class="container">
+      <h2 class="text-center"><i class="fa fa-paper-plane"></i> Join our newsletter for exclusive deals! <i class="fa fa-paper-plane"></i></h2>
+      <div class="col-md-10 col-md-offset-1 emailSignup">
+        <form method="post">
+          <div class="col-md-8">
+            <input class="form-control" type="text" id="emailInput" name="email" placeholder="Enter your email address">
+          </div>
+          <div class="col-md-4">
+            <input class="btn btn-primary form-control" type="submit" id="formSubmit" name="submit" value="Sign Me Up">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container footer">
+      <div class="col-sm-3">
+        <h3 class="footerTitle">Find Us</h3>
+        <img class="img-responsive map" src="https://maps.googleapis.com/maps/api/staticmap?center=39.7336684,-104.9926308&zoom=15&size=400x400&&markers=%7C39.7336684,-104.9926308&maptype=roadmap" alt="Our Location" />
+        </div>
+      <div class="col-sm-3">
+        <h3 class="footerTitle">Get in Touch</h3>
+        <i class = "fa fa-phone"></i> (123) 867-5309
+        <br>
+        <br>
+        <i class = "fa fa-envelope"></i> hello@yoyo.co.uk
+        <br>
+        <br>
+        <i class = "fa fa-facebook "></i>  fb.me/yoyoyoyos
+        <br>
+        <br>
+        <i class = "fa fa-instagram "></i>  yoyoyoyos
+        <br>
+        <br>
+        <i class = "fa fa-twitter "></i> @yoyoyoyos
+        <br>
+        <br>
+        <i class = "fa fa-snapchat-ghost "></i>  yoyoyoyos
+        <br>
+        <br>
+        <i class = "fa fa-rebel "></i> May the force be with you
+
+        </div>
+      <div class="col-sm-3">
+          <h3 class="footerTitle">Blog</h3>
+          <h4 class = "blogPosts">Just Released: our first tandem mobility scooter!</h4>
+          <a href="#"><small>Read more »</small></a>
+          <h4 class = "blogPosts">Make America Yoyo again! A retrospective on the yoyo craze</h4>
+          <a href="#"><small>Read more »</small></a>
+          <h4 class = "blogPosts">10 Tips to bunny hop higher on your scooter</h4>
+          <a><small class="text-right">Read more »</small></a>
+        </div>
+        <div class="col-sm-3">
+          <h3 class="footerTitle">Our Team</h3>
+          <div class="row">
+            <div class="col-md-12">
+              <img class="footerPic" src="src/img/Adam.jpg" />
+              <h2>Adam</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img class="footerPic" src="src/img/Sam.jpg" />
+              <h2>Sam</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img class="footerPic" src="src/img/John.jpg" />
+              <h2>John</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-12 copyright">
+      <br>
+      <p class="text-center muted"><small>© Copyright 2016 Yo! Yo, Inc. All Rights Reserved.</small></p>
+      <br>
+    </div>
+
+    <!-- SCRIPTS! -->
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- fp js -->
+    <script type="text/javascript" src="src/main.js"></script>
+  </body>
+</html>
