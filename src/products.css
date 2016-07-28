@@ -1,0 +1,11 @@
+#cat {
+  /*display: block;*/
+}
+
+li {
+  display: inline;
+}
+
+#prod_det {
+  margin-bottom: 20px;
+}
