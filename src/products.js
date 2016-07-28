@@ -51,17 +51,17 @@ $('#cat_2').on('click', function(e) {
   console.log('cat_2');
 });
 
-$('#cat_3').on('click', function(e) {
-  e.preventDefault();
-  console.log('cat_3');
-});
-
-$('#cat_4').on('click', function(e) {
-  e.preventDefault();
-  console.log('cat_4');
-});
-
-$('#cat_5').on('click', function(e) {
-  e.preventDefault();
-  console.log('cat_5');
-});
+// $('#cat_3').on('click', function(e) {
+//   e.preventDefault();
+//   console.log('cat_3');
+// });
+//
+// $('#cat_4').on('click', function(e) {
+//   e.preventDefault();
+//   console.log('cat_4');
+// });
+//
+// $('#cat_5').on('click', function(e) {
+//   e.preventDefault();
+//   console.log('cat_5');
+// });
