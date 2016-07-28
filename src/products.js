@@ -62,6 +62,16 @@ $('#cat_2').on('click', function(e) {
   console.log('cat_2');
 });
 
+// Show All
+$('#show_all').on('click', function(e) {
+  e.preventDefault();
+  $('.row').css("display", "initial");
+  // $('#cat_2').toggleClass( "btn-primary");
+  $('#cat_1').removeClass( "btn-primary");
+  $('#cat_2').removeClass( "btn-primary");
+  console.log('cat_1');
+});
+
 // $('#cat_3').on('click', function(e) {
 //   e.preventDefault();
 //   console.log('cat_3');
