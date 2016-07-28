@@ -1,4 +1,7 @@
 /*Header & Footer*/
+nav {
+  border-radius: 0 !important;
+}
 .navbar {
   margin-bottom: 0;
 }
