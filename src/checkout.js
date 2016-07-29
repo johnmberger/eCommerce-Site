@@ -6,13 +6,13 @@ $(document).ready(function() {
   validateInput('#zipCodeShipping', 4);
   validateInput('#zipCodeBilling', 4);
   $('#copyToBilling').click(function() {
-    $("#firstNameBilling").val($("#firstNameShipping").val());
-    $("#lastNameBilling").val($("#lastNameShipping").val());
-    $("#companyBilling").val($("#companyShipping").val());
-    $("#companyBilling").val($("#companyShipping").val());
-    $("#address1Billing").val($("#address1Shipping").val());
-    $("#address2Billing").val($("#address2Shipping").val());
-    $("#zipCodeBilling").val($("#zipCodeShipping").val());
+    $('#firstNameBilling').val($('#firstNameShipping').val());
+    $('#lastNameBilling').val($('#lastNameShipping').val());
+    $('#companyBilling').val($('#companyShipping').val());
+    $('#companyBilling').val($('#companyShipping').val());
+    $('#address1Billing').val($('#address1Shipping').val());
+    $('#address2Billing').val($('#address2Shipping').val());
+    $('#zipCodeBilling').val($('#zipCodeShipping').val());
     var state = $('#stateShipping option:selected').val();
     $('#stateBilling option[value=' + state + ']').attr('selected','selected');
   });
@@ -56,7 +56,7 @@ $(document).ready(function() {
         console.log(response.error.message);
       } else { // No errors, submit the form.
         var successMessage = 'Your purchase has been successfully processed!';
-        $("#personalInfo")[0].reset();
+        $('#personalInfo')[0].reset();
         alertMessage(successMessage, 'success');
       }
     }
@@ -76,5 +76,5 @@ function validateInput(id, num) {
 }
 //Apply error or success message
 function alertMessage(msg, bSClass) {
-  $("#submitMessage").append('<div class="alert alert-dismissible alert-' + bSClass + '"><strong>' + msg + '</strong></div>').delay(3000).fadeOut(500).removeClass('');
+  $('#submitMessage').append('<div class="alert alert-dismissible alert-' + bSClass + '"><strong>' + msg + '</strong></div>').delay(3000).fadeOut(500).removeClass('');
 }
