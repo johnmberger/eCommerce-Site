@@ -2,7 +2,12 @@ $(window).resize(function() {
   resizeHelper();
 });
 
+$('img.carousel-image').load(function() {
+  resizeHelper();
+})
+
 $(document).on('ready', function() {
+
   var $slider = $('.carousel');
   var $slide = 'img.carousel-image';
 
