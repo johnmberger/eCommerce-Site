@@ -44,15 +44,14 @@
     </div>
   </nav>
   <header class="container-fluid">
-    <div class="container">
-    <div id="jtron" class="jumbotron col-md-6">
+    <div class="jumbotron col-md-6">
       <h1 class="text-primary text-center">Checkout</h1>
     </div>
     <div class="col-md-6">
       <table class="table table-hover table-condensed">
         <thead>
           <tr>
-            <th>Your Purchase</th>
+            <th class="table-header">Your Purchase</th>
             <th></th>
             <th></th>
             <th></th>
@@ -73,7 +72,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
     </div>
   </header>
   <div class="container-fluid">
@@ -147,9 +145,8 @@
   	        <option value="WI">Wisconsin</option>
   	        <option value="WY">Wyoming</option>
           </select>
-          <label for="zipCodeShipping" name="number"
-          onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">Zip Code</label>
-          <input type="text" class="form-control" name="zipCodeShipping" id="zipCodeShipping">
+          <label for="zipCodeShipping" name="number">Zip Code</label>
+          <input type="number" class="form-control" name="zipCodeShipping" id="zipCodeShipping" minlength="5" maxlength="10">
           <div class="checkbox">
             <label>
             <input type="checkbox" name="copyToBilling" id="copyToBilling" value="Y"> Copy Shipping to Billing?
@@ -227,7 +224,7 @@
           <option value="WY">Wyoming</option>
         </select>
         <label for="zipCodeBilling">Zip Code</label>
-        <input type="text" class="form-control" name="zipCodeBilling" id="zipCodeBilling">
+        <input type="number" class="form-control" name="zipCodeBilling" id="zipCodeBilling">
       </fieldset>
     </div>
     <div class="col-md-12">

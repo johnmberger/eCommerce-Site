@@ -3,8 +3,8 @@ $(document).ready(function() {
   validateInput('#lastNameBilling', 1);
   validateInput('#address1Shipping', 1);
   validateInput('#address1Billing', 1);
-  validateInput('#zipCodeShipping', 5);
-  validateInput('#zipCodeBilling', 5);
+  validateInput('#zipCodeShipping', 4);
+  validateInput('#zipCodeBilling', 4);
   $('#copyToBilling').click(function() {
     $("#firstNameBilling").val($("#firstNameShipping").val());
     $("#lastNameBilling").val($("#lastNameShipping").val());
@@ -27,24 +27,20 @@ $(document).ready(function() {
     // Validate the number
     if (!Stripe.card.validateCardNumber(ccNum)) {
       error = true;
-      console.log(ccNum);
-      console.log('The credit card number appears to be invalid.');
-      var errorMessage = 'Uh oh. Your credit card number appears to be invalid. Please enter a valid number and resubmit.'
-      alertMessage(errorMessage, 'danger');
+      var errorMessageCC = 'Uh oh. Your credit card number appears to be invalid. Please enter a valid number and resubmit.';
+      alertMessage(errorMessageCC, 'danger');
     }
     // Validate the CVC
     if (!Stripe.card.validateCVC(cvcNum)) {
       error = true;
-      var errorMessage = 'The CVC number appears to be invalid. Please enter a valid number and resubmit.'
-      console.log('The CVC number appears to be invalid.');
-      alertMessage(errorMessage, 'danger');
+      var errorMessageCVC = 'The CVC number appears to be invalid. Please enter a valid number and resubmit.';
+      alertMessage(errorMessageCVC, 'danger');
     }
     // Validate the expiration
     if (!Stripe.card.validateExpiry(expMonth, expYear)) {
       error = true;
-      var errorMessage = 'The expiration date appears to be invalid. Please enter a valid month and year and resubmit.';
-      console.log('The expiration date appears to be invalid.');
-      alertMessage(errorMessage, 'danger');
+      var errorMessageMY = 'The expiration date appears to be invalid. Please enter a valid month and year and resubmit.';
+      alertMessage(errorMessageMY, 'danger');
     }
     // Get the Stripe token
     if (!error) {
@@ -59,7 +55,6 @@ $(document).ready(function() {
       if (response.error) {
         console.log(response.error.message);
       } else { // No errors, submit the form.
-        console.log('form submitted successfully!');
         var successMessage = 'Your purchase has been successfully processed!';
         $("#personalInfo")[0].reset();
         alertMessage(successMessage, 'success');
