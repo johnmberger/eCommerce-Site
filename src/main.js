@@ -111,6 +111,7 @@ $(document).on('ready', function() {
       $('.add-to-cart').remove();
     })
   })
+  resizeHelper();
 });
 
 function resizeHelper() {
