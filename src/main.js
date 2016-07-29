@@ -14,7 +14,7 @@ $(document).on('ready', function() {
   // Breaks carousel auto-scroll on button click
   var breaker = false;
 
-  function slides(){
+  function slides() {
     return $slider.find($slide);
   }
 
@@ -38,7 +38,7 @@ $(document).on('ready', function() {
   resizeHelper();
 
   // Sets auto-scroll of carousel
-  setInterval(function(){
+  setInterval(function() {
     if (breaker) {
       return false;
     }
@@ -84,7 +84,7 @@ $(document).on('ready', function() {
     }
   });
 
-  $('#emailInput').on('blur', function(){
+  $('#emailInput').on('blur', function() {
     if ($(this).hasClass('validEmail')) {
       $(this).css({'border-color': '', 'box-shadow': ''});
     }
@@ -98,13 +98,11 @@ $(document).on('ready', function() {
       $('#emailInput').after('<div id="status" class="alert alert-success"><strong>Success! </strong>Thanks for signing up.</div>');
       $('#status').fadeIn(500, function () {
         $(this).delay(3000).fadeOut(500);
-    });
-   } else {
+      });
+    } else {
       var l = 20;
-      for( var i = 0; i < 10; i++ )
-      $('#emailInput').animate( {
-         'margin-left': "+=" + ( l = -l ) + 'px',
-         'margin-right': "-=" + l + 'px'
+      for (var i = 0; i < 10; i++)
+      $('#emailInput').animate({'margin-left': '+=' + (l = -l) + 'px', 'margin-right': '-=' + l + 'px'
       }, 50);
     }
   });
@@ -121,5 +119,5 @@ $(document).on('ready', function() {
 function resizeHelper() {
   var img = document.getElementsByClassName('carousel-image active');
   var height = img[0].clientHeight;  $('.featured-products').css('margin-top', height);
-  $('.overlay').css('margin-top', height/2.5);
+  $('.overlay').css('margin-top', height / 2.5);
 }
