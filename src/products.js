@@ -7,17 +7,15 @@ $(function () {
       url: 'http://galvanize-student-apis.herokuapp.com/gcommerce/products',
       method: 'GET'
     }).done(function (product) {
-      // console.log(product);
       for (var i = 0; i < product.length; i++) {
 
         var name = '';
 
-        // Price remove $ and to string
+        // Price remove $ and convert to string
 
         var price = product[i]['price'];
         var price = price.replace("$", "");
         var price = price.toString();
-        // console.log(price);
 
         var id = product[i]['id'];
         var size = product[i]['size']
@@ -39,11 +37,6 @@ $(function () {
         } else {
           $productRow.addClass('yoyo');
         }
-
-
-
-        // ('h3').addClass(price);
-
       }
     })
   }
@@ -54,7 +47,6 @@ $('#cat_1').on('click', function(e) {
   e.preventDefault();
   $('.row').css("display", "initial");
   $('.scooter').css("display", "none");
-  // $('#cat_2').toggleClass( "btn-primary");
   $('#cat_1').toggleClass( "btn-primary");
   $('#cat_2').removeClass( "btn-primary");
   $('#cat_3').removeClass( "btn-primary");
@@ -83,7 +75,6 @@ $('#show_all').on('click', function(e) {
   e.preventDefault();
   console.log(e);
   $('.row').css("display", "initial");
-  // $('#cat_2').toggleClass( "btn-primary");
   $('#show_all').toggleClass( "btn-primary");
   $('#cat_1').removeClass( "btn-primary");
   $('#cat_2').removeClass( "btn-primary");
@@ -102,11 +93,12 @@ $('#cat_3').on('click', function(e) {
   $('#show_all').removeClass( "btn-primary");
   $('#cat_4').removeClass( "btn-primary");
   $('#cat_5').removeClass( "btn-primary");
+  // Reset and show all product
   $('.row').css("display", "initial");
-  // hide everything
   $('.row.scooter, .row.yoyo').each(function(eachProduct) {
-    if (parseInt($(this).attr('data-price'))>= 25) {
-      // show all that meet criteria
+    var price1 = parseFloat($(this).attr('data-price')).toFixed(2);
+    if (price1 >= 25) {
+      // Display none all product but $0 - $25
       $(this).css("display", "none");
 
     }
@@ -122,12 +114,12 @@ $('#cat_4').on('click', function(e) {
   $('#cat_3').removeClass( "btn-primary");
   $('#show_all').removeClass( "btn-primary");
   $('#cat_5').removeClass( "btn-primary");
+  // Reset and show all product
   $('.row').css("display", "initial");
-  // hide everything
   $('.row.scooter, .row.yoyo').each(function(eachProduct) {
-    var price1 = parseInt($(this).attr('data-price'))
+    var price1 = parseFloat($(this).attr('data-price')).toFixed(2);
     if (price1 <= 25 || price1 >=50) {
-      // show all that meet criteria
+      // Display none all product but $25 - $50
       $(this).css("display", "none");
 
     }
@@ -144,17 +136,14 @@ $('#cat_5').on('click', function(event) {
   $('#cat_3').removeClass( "btn-primary");
   $('#cat_4').removeClass( "btn-primary");
   $('#show_all').removeClass( "btn-primary");
+  // Reset and show all product
   $('.row').css("display", "initial");
-  // hide everything
   $('.row.scooter, .row.yoyo').each(function(eachProduct) {
-    var price1 = parseInt($(this).attr('data-price'))
-    console.log('this: ', this);
-    console.log(typeof eachProduct);
+    // var price1 = parseInt($(this).attr('data-price'))
+    var price1 = parseFloat($(this).attr('data-price')).toFixed(2);
     if (price1 <= 50) {
-      // show all that meet criteria
+      // Display none all product but $50 - $100
       $(this).css("display", "none");
-      console.log(this);
-
     }
   })
 })
