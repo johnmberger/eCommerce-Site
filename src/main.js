@@ -3,7 +3,6 @@ $(window).resize(function() {
 });
 
 $(document).on('ready', function() {
-  resizeHelper();
   var $slider = $('.carousel');
   var $slide = 'img.carousel-image';
 
