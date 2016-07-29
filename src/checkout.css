@@ -10,7 +10,8 @@ label {
 }
 .jumbotron {
   margin-top: 10px;
-  color: white;
+  color: black;
+  background: url(img/scooter.svg);
 }
 table {
   margin-top: 10px;
