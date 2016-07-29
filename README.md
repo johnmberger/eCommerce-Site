@@ -9,4 +9,4 @@ Contributors:
 1. Sam Goldsmith
 1. John Berger
 
-Live: https://johnmberger.github.io/eCommerce-Site/
+Live Site: https://johnmberger.github.io/eCommerce-Site/
