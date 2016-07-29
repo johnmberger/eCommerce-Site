@@ -79,7 +79,7 @@ function validateInput(id, num) {
     }
   });
 }
-//Apply error message
+//Apply error or success message
 function alertMessage(msg, bSClass) {
   $("#submitMessage").append('<div class="alert alert-dismissible alert-' + bSClass + '"><strong>' + msg + '</strong></div>').delay(3000).fadeOut(500).removeClass('');
 }
