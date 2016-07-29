@@ -2,9 +2,9 @@ $(window).resize(function() {
   resizeHelper();
 });
 
-$('img.carousel-imageg').load(function() {
+$('img.carousel-image').load(function() {
   resizeHelper();
-})
+});
 
 $(document).on('ready', function() {
 
@@ -60,7 +60,7 @@ $(document).on('ready', function() {
     setInterval(function() {
       breaker = false;
     }, 6000);
-  })
+  });
 
   $('#pointer-right').on('click', function() {
     breaker = true;
@@ -73,8 +73,8 @@ $(document).on('ready', function() {
   $('#emailInput').on('input', function() {
 
     var emailAddress = $(this).val();
-    var IndexOfatSign = emailAddress.indexOf('@')
-    var IndexOfPeriod = emailAddress.indexOf('.')
+    var IndexOfatSign = emailAddress.indexOf('@');
+    var IndexOfPeriod = emailAddress.indexOf('.');
     var length = emailAddress.length;
 
     $(this).css({'border-color': 'red', 'box-shadow': '0 0 10px red'});
@@ -82,13 +82,13 @@ $(document).on('ready', function() {
     if (length > 3 && emailAddress.includes('@') && emailAddress.includes('.') && IndexOfPeriod - IndexOfatSign > 1 && length - IndexOfPeriod > 2 && IndexOfPeriod !== length && !emailAddress.includes(')') && !emailAddress.includes('(') && emailAddress.charAt(length - 1) !== '.' && emailAddress.charAt(length - 1) !== '@' && emailAddress.charAt(length - 1) !== ' ' && emailAddress.charAt(0) !== '@') {
       $(this).css({'border-color': '#428bca', 'box-shadow': '0 0 10px #428bca'}).addClass('validEmail');
     }
-  })
+  });
 
   $('#emailInput').on('blur', function(){
     if ($(this).hasClass('validEmail')) {
       $(this).css({'border-color': '', 'box-shadow': ''});
     }
-  })
+  });
 
   $('form').on('submit', function(e) {
     e.preventDefault();
@@ -113,13 +113,13 @@ $(document).on('ready', function() {
     $(this).append('<div class="alert add-to-cart"><p class="text-center"><strong>Add to Cart</strong></p></div>');
     $(this).mouseleave(function() {
       $('.add-to-cart').remove();
-    })
-  })
+    });
+  });
   resizeHelper();
 });
 
 function resizeHelper() {
   var img = document.getElementsByClassName('carousel-image active');
   var height = img[0].clientHeight;  $('.featured-products').css('margin-top', height);
-  $('.overlay').css('margin-top', height/2.5)
-};
+  $('.overlay').css('margin-top', height/2.5);
+}
