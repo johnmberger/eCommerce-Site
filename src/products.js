@@ -29,7 +29,7 @@ $(function () {
           name = 'Yo-Yo';
         }
 
-        var $productRow = $('<div id="product" class="row" data-price="' + price + '"><img class="col-md-4 col-sm-12" src="https://placehold.it/350x240" alt="Placeholder"/><div class="col-md-8 col-sm-12"><h1>Product #' + id +'</h1><h3>' + product[i].price + '</h3><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span>' + '<h5>Category: ' + name + '</h5><p>' + descripton
+        var $productRow = $('<div id="product" class="row" data-price="' + price + '"><img class="col-md-4 col-sm-12" src="https://placehold.it/350x240" alt="product"/><div class="col-md-8 col-sm-12"><h1>Product #' + id +'</h1><h3>' + product[i].price + '</h3><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span>' + '<h5>Category: ' + name + '</h5><p>' + descripton
         + '</p><hr></div></div>');
 
         $('#product').append($productRow);
@@ -57,6 +57,10 @@ $('#cat_1').on('click', function(e) {
   // $('#cat_2').toggleClass( "btn-primary");
   $('#cat_1').toggleClass( "btn-primary");
   $('#cat_2').removeClass( "btn-primary");
+  $('#cat_3').removeClass( "btn-primary");
+  $('#cat_4').removeClass( "btn-primary");
+  $('#cat_5').removeClass( "btn-primary");
+  $('#show_all').removeClass( "btn-primary");
   console.log('cat_1');
 });
 
@@ -100,7 +104,7 @@ $('#cat_3').on('click', function(e) {
   $('#cat_5').removeClass( "btn-primary");
   $('.row').css("display", "initial");
   // hide everything
-  $('.row.scooter, .row.yoyo').each(function(placeholder) {
+  $('.row.scooter, .row.yoyo').each(function(eachProduct) {
     if (parseInt($(this).attr('data-price'))>= 25) {
       // show all that meet criteria
       $(this).css("display", "none");
@@ -120,7 +124,7 @@ $('#cat_4').on('click', function(e) {
   $('#cat_5').removeClass( "btn-primary");
   $('.row').css("display", "initial");
   // hide everything
-  $('.row.scooter, .row.yoyo').each(function(placeholder) {
+  $('.row.scooter, .row.yoyo').each(function(eachProduct) {
     var price1 = parseInt($(this).attr('data-price'))
     if (price1 <= 25 || price1 >=50) {
       // show all that meet criteria
@@ -132,21 +136,24 @@ $('#cat_4').on('click', function(e) {
 
 
 // Show $50 - $100
-$('#cat_5').on('click', function(e) {
-  e.preventDefault();
+$('#cat_5').on('click', function(event) {
+  event.preventDefault();
   $('#cat_5').toggleClass( "btn-primary");
   $('#cat_1').removeClass( "btn-primary");
   $('#cat_2').removeClass( "btn-primary");
   $('#cat_3').removeClass( "btn-primary");
-  $('#show_all').removeClass( "btn-primary");
   $('#cat_4').removeClass( "btn-primary");
+  $('#show_all').removeClass( "btn-primary");
   $('.row').css("display", "initial");
   // hide everything
-  $('.row.scooter, .row.yoyo').each(function(placeholder) {
+  $('.row.scooter, .row.yoyo').each(function(eachProduct) {
     var price1 = parseInt($(this).attr('data-price'))
+    console.log('this: ', this);
+    console.log(typeof eachProduct);
     if (price1 <= 50) {
       // show all that meet criteria
       $(this).css("display", "none");
+      console.log(this);
 
     }
   })
