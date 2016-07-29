@@ -4,7 +4,7 @@ $(function () {
 
   function getProduct() {
     $.ajax ({
-      url: 'http://galvanize-student-apis.herokuapp.com/gcommerce/products',
+      url: 'https://galvanize-student-apis.herokuapp.com/gcommerce/products',
       method: 'GET'
     }).done(function (product) {
       for (var i = 0; i < product.length; i++) {
