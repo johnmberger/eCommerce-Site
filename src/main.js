@@ -2,7 +2,7 @@ $(window).resize(function() {
   resizeHelper();
 });
 
-$('img.carousel-image').load(function() {
+$('img.carousel-imageg').load(function() {
   resizeHelper();
 })
 
